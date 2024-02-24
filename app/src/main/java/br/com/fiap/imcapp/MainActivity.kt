@@ -87,6 +87,10 @@ fun IMCScreen() {
         mutableStateOf("")
     }
 
+    var corDoCard by remember {
+        mutableStateOf("")
+    }
+
 
     Box(
         modifier = Modifier
@@ -218,6 +222,8 @@ fun IMCScreen() {
                                     )
 
                                     statusIMC = obterStatusImc(imcUsuario = imc)
+
+                                    corDoCard = alteraCorDoCard(imcUsuario = imc)
                                 },
                                 modifier = Modifier
                                     .fillMaxWidth()
@@ -246,7 +252,9 @@ fun IMCScreen() {
                 .height(200.dp)
                 .padding(horizontal = 32.dp, vertical = 24.dp)
                 .align(Alignment.BottomCenter),
-            colors = CardDefaults.cardColors(containerColor = Color(0xff329f6b)),
+            //colors = CardDefaults.cardColors(containerColor = Color(0xff329f6b)),
+            // -- Automação para mudar a cor do Card baseda no valor do imc.
+            colors = CardDefaults.cardColors(containerColor = Color(corDoCard.toLong())),
             elevation = CardDefaults.cardElevation(4.dp),
             //border = BorderStroke(width = 1.dp, Color(0xffed145b))
         ) {
@@ -274,7 +282,7 @@ fun IMCScreen() {
                     modifier = Modifier.fillMaxWidth(),
                     fontWeight = FontWeight.Bold,
                     color = Color.White,
-                    fontSize = 36.sp,
+                    fontSize = 26.sp,
                     textAlign = TextAlign.End
                 )
             }
@@ -282,6 +290,8 @@ fun IMCScreen() {
 
     }
 }
+
+
 
 @Preview(showBackground = true)
 @Composable

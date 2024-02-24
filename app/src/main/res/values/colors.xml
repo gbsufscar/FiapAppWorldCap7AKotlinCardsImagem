@@ -11,5 +11,7 @@
     <!-- Inclusão de cor adicional -->
     <color name="vermenlho_fiap">#FFED145B</color>
     <color name="cor_do_texto">#EDC864</color>
+    <color name="laranja">#FF5722</color>
+
 
 </resources>
