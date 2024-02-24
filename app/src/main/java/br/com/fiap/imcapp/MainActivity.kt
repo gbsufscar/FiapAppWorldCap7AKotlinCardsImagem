@@ -23,9 +23,12 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.modifier.modifierLocalMapOf
+import androidx.compose.ui.res.colorResource
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import br.com.fiap.imcapp.ui.theme.IMCAppTheme
 
 class MainActivity : ComponentActivity() {
@@ -65,6 +68,7 @@ fun IMCScreen (){
                     .border(4.dp, Color.Yellow)
                     .fillMaxWidth()
                     .height(160.dp)
+                    .background(colorResource(id = R.color.vermenlho_fiap)) // Arg.: recurso (res) de cor (tag).
             ){
                 androidx.compose.foundation.Image(
                     painter = painterResource(id = R.drawable.bmi),
@@ -72,7 +76,13 @@ fun IMCScreen (){
                     modifier = Modifier
                         .size(60.dp)
                         .padding(top = 16.dp)
-
+                    )
+                Text(
+                    text = "Calculadora IMC",
+                    fontSize = 24.sp,
+                    color = Color.White,
+                    fontWeight = FontWeight.Bold,
+                    modifier = Modifier.padding(top = 12.dp, bottom = 24.dp)
                     )
             }
             // Coluna 3 - Formulário (dendro da Coluna 1 e abaixo da Coluna 2
