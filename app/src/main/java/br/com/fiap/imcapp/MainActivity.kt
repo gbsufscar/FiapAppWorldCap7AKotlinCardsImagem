@@ -88,7 +88,7 @@ fun IMCScreen() {
     }
 
     var corDoCard by remember {
-        mutableStateOf("")
+        mutableStateOf("1")
     }
 
 
