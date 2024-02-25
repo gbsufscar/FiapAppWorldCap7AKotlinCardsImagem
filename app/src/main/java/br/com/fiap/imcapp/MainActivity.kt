@@ -88,7 +88,7 @@ fun IMCScreen() {
     }
 
     var corDoCard by remember {
-        mutableStateOf("1")
+        mutableStateOf(Color.Green)
     }
 
 
@@ -254,7 +254,8 @@ fun IMCScreen() {
                 .align(Alignment.BottomCenter),
             //colors = CardDefaults.cardColors(containerColor = Color(0xff329f6b)),
             // -- Automação para mudar a cor do Card baseda no valor do imc.
-            colors = CardDefaults.cardColors(containerColor = Color(corDoCard.toLong())),
+            //colors = CardDefaults.cardColors(containerColor = Color(corDoCard.toLong())),
+            colors = CardDefaults.cardColors(containerColor = corDoCard), // Cor do Card baseada no valor do IMC.
             elevation = CardDefaults.cardElevation(4.dp),
             //border = BorderStroke(width = 1.dp, Color(0xffed145b))
         ) {
